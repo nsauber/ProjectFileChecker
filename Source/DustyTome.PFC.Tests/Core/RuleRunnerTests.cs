@@ -12,13 +12,19 @@ namespace DustyTome.PFC.Tests.Core
     public class RuleRunnerTests
     {
         private MockRepository _mocks;
+        
+        private IFileRetriever _fileRetriever;
+        private IRuleRetriever _ruleRetriever;
         private IRuleRunner _ruleRunner;
 
         [SetUp]
         public void SetUp()
         {
             _mocks = new MockRepository();
-            _ruleRunner = new RuleRunner();
+
+            _fileRetriever = _mocks.StrictMock<IFileRetriever>();
+            _ruleRetriever = _mocks.StrictMock<IRuleRetriever>();
+            _ruleRunner = new RuleRunner(_fileRetriever, _ruleRetriever);
         }
 
         [Test]
@@ -42,6 +48,8 @@ namespace DustyTome.PFC.Tests.Core
 
             using (_mocks.Record())
             {
+                Expect.Call(_fileRetriever.GetFiles()).Return(files);
+                Expect.Call(_ruleRetriever.GetRules()).Return(rules);
                 Expect.Call(rule1.Run(file1)).Return(results[0]);
                 Expect.Call(rule1.Run(file2)).Return(results[1]);
                 Expect.Call(rule2.Run(file1)).Return(results[2]);
@@ -54,7 +62,7 @@ namespace DustyTome.PFC.Tests.Core
             IEnumerable<IResult> actualResults;
             using (_mocks.Playback())
             {
-                actualResults = _ruleRunner.Run(files, rules);
+                actualResults = _ruleRunner.Run();
             }
 
             // Assert

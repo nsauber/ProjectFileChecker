@@ -38,7 +38,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IFile.cs" />
+    <Compile Include="IFileRetriever.cs" />
     <Compile Include="IResult.cs" />
+    <Compile Include="IRuleRetriever.cs" />
     <Compile Include="IRuleRunner.cs" />
     <Compile Include="IRule.cs" />
     <Compile Include="RuleRunner.cs" />

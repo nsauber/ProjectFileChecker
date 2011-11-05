@@ -6,9 +6,21 @@ namespace DustyTome.PFC.Core
 {
     public class RuleRunner : IRuleRunner
     {
-        public IEnumerable<IResult> Run(IEnumerable<IFile> files, IEnumerable<IRule> rules)
+        private readonly IFileRetriever _fileRetriever;
+        private readonly IRuleRetriever _ruleRetriever;
+
+        public RuleRunner(IFileRetriever fileRetriever, IRuleRetriever ruleRetriever)
+        {
+            _fileRetriever = fileRetriever;
+            _ruleRetriever = ruleRetriever;
+        }
+
+        public IEnumerable<IResult> Run()
         {
             var results = new List<IResult>();
+
+            var files = _fileRetriever.GetFiles();
+            var rules = _ruleRetriever.GetRules();
 
             foreach (var rule in rules)
             {

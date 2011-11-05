@@ -4,8 +4,8 @@ using System.Text;
 
 namespace DustyTome.PFC.Core
 {
-    public interface IRuleRunner
+    public interface IFileRetriever
     {
-        IEnumerable<IResult> Run();
+        IEnumerable<IFile> GetFiles();
     }
 }

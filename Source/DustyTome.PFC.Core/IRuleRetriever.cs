@@ -4,8 +4,8 @@ using System.Text;
 
 namespace DustyTome.PFC.Core
 {
-    public interface IRuleRunner
+    public interface IRuleRetriever
     {
-        IEnumerable<IResult> Run();
+        IEnumerable<IRule> GetRules();
     }
 }
