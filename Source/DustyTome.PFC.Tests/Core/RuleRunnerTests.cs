@@ -11,6 +11,8 @@ namespace DustyTome.PFC.Tests.Core
     [TestFixture]
     public class RuleRunnerTests
     {
+        private TestHelper _helper;
+
         private MockRepository _mocks;
         
         private IFileRetriever _fileRetriever;
@@ -20,6 +22,8 @@ namespace DustyTome.PFC.Tests.Core
         [SetUp]
         public void SetUp()
         {
+            _helper = new TestHelper();
+
             _mocks = new MockRepository();
 
             _fileRetriever = _mocks.StrictMock<IFileRetriever>();
@@ -66,21 +70,11 @@ namespace DustyTome.PFC.Tests.Core
             }
 
             // Assert
-            Assert.That(NumberOfItemsIn(actualResults), Is.EqualTo(6));
+            Assert.That(_helper.NumberOfItemsIn(actualResults), Is.EqualTo(6));
             foreach (var result in results)
             {
                 Assert.That(actualResults, Contains.Item(result));
             }
-        }
-
-        private int NumberOfItemsIn(IEnumerable enumerable)
-        {
-            int count = 0;
-            foreach (var item in enumerable)
-            {
-                count++;
-            }
-            return count;
         }
     }
 }

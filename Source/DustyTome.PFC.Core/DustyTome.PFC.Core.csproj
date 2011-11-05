@@ -37,6 +37,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="File.cs" />
+    <Compile Include="FileRetriever.cs" />
     <Compile Include="IFile.cs" />
     <Compile Include="IFileRetriever.cs" />
     <Compile Include="IResult.cs" />

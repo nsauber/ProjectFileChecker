@@ -6,5 +6,6 @@ namespace DustyTome.PFC.Core
 {
     public interface IFile
     {
+        string FilePath { get; }
     }
 }
