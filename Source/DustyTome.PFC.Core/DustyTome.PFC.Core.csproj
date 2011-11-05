@@ -42,7 +42,6 @@
     <Compile Include="IRuleRunner.cs" />
     <Compile Include="IRule.cs" />
     <Compile Include="RuleRunner.cs" />
-    <Compile Include="SampleClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
