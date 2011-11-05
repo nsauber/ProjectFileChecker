@@ -37,6 +37,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IFile.cs" />
+    <Compile Include="IResult.cs" />
+    <Compile Include="IRuleRunner.cs" />
+    <Compile Include="IRule.cs" />
+    <Compile Include="RuleRunner.cs" />
     <Compile Include="SampleClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
