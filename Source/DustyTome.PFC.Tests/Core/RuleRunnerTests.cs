@@ -4,34 +4,43 @@ using System.Text;
 using NUnit.Framework;
 using DustyTome.PFC.Core;
 using Rhino.Mocks;
+using System.Collections;
 
 namespace DustyTome.PFC.Tests.Core
 {
     [TestFixture]
     public class RuleRunnerTests
     {
+        private MockRepository _mocks;
+        private IRuleRunner _ruleRunner;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _mocks = new MockRepository();
+            _ruleRunner = new RuleRunner();
+        }
+
         [Test]
         public void Run_WhenGivenFilesAndRules_ShouldRunEachRuleOnEachFile()
         {
-            var mocks = new MockRepository();
-
             // Arrange
-            var file1 = mocks.Stub<IFile>();
-            var file2 = mocks.Stub<IFile>();
+            var file1 = _mocks.Stub<IFile>();
+            var file2 = _mocks.Stub<IFile>();
             var files = new List<IFile> { file1, file2 };
 
-            var rule1 = mocks.StrictMock<IRule>();
-            var rule2 = mocks.StrictMock<IRule>();
-            var rule3 = mocks.StrictMock<IRule>();
+            var rule1 = _mocks.StrictMock<IRule>();
+            var rule2 = _mocks.StrictMock<IRule>();
+            var rule3 = _mocks.StrictMock<IRule>();
             var rules = new List<IRule> { rule1, rule2, rule3 };
 
             var results = new IResult[6];
             for (int i = 0; i < 6; i++)
             {
-                results[i] = mocks.Stub<IResult>();
+                results[i] = _mocks.Stub<IResult>();
             }
 
-            using (mocks.Record())
+            using (_mocks.Record())
             {
                 Expect.Call(rule1.Run(file1)).Return(results[0]);
                 Expect.Call(rule1.Run(file2)).Return(results[1]);
@@ -42,18 +51,28 @@ namespace DustyTome.PFC.Tests.Core
             }
 
             // Act
-            var ruleRunner = new RuleRunner();
             IEnumerable<IResult> actualResults;
-            using (mocks.Playback())
+            using (_mocks.Playback())
             {
-                actualResults = ruleRunner.Run(files, rules);
+                actualResults = _ruleRunner.Run(files, rules);
             }
 
             // Assert
+            Assert.That(NumberOfItemsIn(actualResults), Is.EqualTo(6));
             foreach (var result in results)
             {
                 Assert.That(actualResults, Contains.Item(result));
             }
+        }
+
+        private int NumberOfItemsIn(IEnumerable enumerable)
+        {
+            int count = 0;
+            foreach (var item in enumerable)
+            {
+                count++;
+            }
+            return count;
         }
     }
 }
