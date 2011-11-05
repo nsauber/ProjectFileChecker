@@ -52,7 +52,6 @@
   <ItemGroup>
     <Compile Include="Core\FileRetrieverTests.cs" />
     <Compile Include="Core\RuleRunnerTests.cs" />
-    <Compile Include="TestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

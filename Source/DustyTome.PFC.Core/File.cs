@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace DustyTome.PFC.Core
 {
@@ -12,5 +13,10 @@ namespace DustyTome.PFC.Core
         }
 
         public string FilePath { get; private set; }
+        
+        public Stream GetStream()
+        {
+            return new FileStream(FilePath, FileMode.Open);
+        }
     }
 }

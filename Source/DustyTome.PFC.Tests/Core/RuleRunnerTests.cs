@@ -11,7 +11,7 @@ namespace DustyTome.PFC.Tests.Core
     [TestFixture]
     public class RuleRunnerTests
     {
-        private TestHelper _helper;
+        private EnumerableHelper _helper;
 
         private MockRepository _mocks;
         
@@ -22,7 +22,7 @@ namespace DustyTome.PFC.Tests.Core
         [SetUp]
         public void SetUp()
         {
-            _helper = new TestHelper();
+            _helper = new EnumerableHelper();
 
             _mocks = new MockRepository();
 

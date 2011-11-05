@@ -45,8 +45,12 @@
     <Compile Include="IRuleRetriever.cs" />
     <Compile Include="IRuleRunner.cs" />
     <Compile Include="IRule.cs" />
+    <Compile Include="Result.cs" />
+    <Compile Include="HardCodedRuleRetriever.cs" />
     <Compile Include="RuleRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AlwaysSuccessfulRule.cs" />
+    <Compile Include="EnumerableHelper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

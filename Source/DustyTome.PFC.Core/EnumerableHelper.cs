@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Collections;
 
-namespace DustyTome.PFC.Tests
+namespace DustyTome.PFC.Core
 {
-    public class TestHelper
+    public class EnumerableHelper
     {
         public int NumberOfItemsIn(IEnumerable enumerable)
         {

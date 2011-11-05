@@ -6,5 +6,8 @@ namespace DustyTome.PFC.Core
 {
     public interface IResult
     {
+        bool HasErrors { get; }
+
+        IEnumerable<string> GetErrorMessages();
     }
 }

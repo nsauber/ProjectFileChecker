@@ -9,12 +9,12 @@ namespace DustyTome.PFC.Tests.Core
     [TestFixture]
     public class FileRetrieverTests
     {
-        private TestHelper _helper;
+        private EnumerableHelper _helper;
 
         [SetUp]
         public void SetUp()
         {
-            _helper = new TestHelper();
+            _helper = new EnumerableHelper();
         }
 
         [Test]
