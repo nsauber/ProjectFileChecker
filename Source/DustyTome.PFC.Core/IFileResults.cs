@@ -4,10 +4,14 @@ using System.Text;
 
 namespace DustyTome.PFC.Core
 {
-    public interface IResult
+    public interface IFileResults
     {
+        IFile File { get; }
+
+        string FilePath { get; }
+
         bool HasErrors { get; }
 
-        IEnumerable<string> GetErrorMessages();
+        IEnumerable<IError> GetErrors();
     }
 }

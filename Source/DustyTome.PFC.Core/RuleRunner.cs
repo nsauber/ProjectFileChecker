@@ -15,20 +15,24 @@ namespace DustyTome.PFC.Core
             _ruleRetriever = ruleRetriever;
         }
 
-        public IEnumerable<IResult> Run()
+        public IEnumerable<IFileResults> Run()
         {
-            var results = new List<IResult>();
+            var results = new List<IFileResults>();
 
             var files = _fileRetriever.GetFiles();
             var rules = _ruleRetriever.GetRules();
 
-            foreach (var rule in rules)
+            foreach (var file in files)
             {
-                foreach (var file in files)
+                var fileResults = new FileResults(file);
+
+                foreach (var rule in rules)
                 {
-                    var result = rule.Run(file);
-                    results.Add(result);
+                    var errors = rule.Check(file);
+                    fileResults.Merge(errors);
                 }
+
+                results.Add(fileResults);
             }
 
             return results;

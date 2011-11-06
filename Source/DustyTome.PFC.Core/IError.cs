@@ -4,8 +4,10 @@ using System.Text;
 
 namespace DustyTome.PFC.Core
 {
-    public interface IRuleRunner
+    public interface IError
     {
-        IEnumerable<IFileResults> Run();
+        int LineNumber { get; }
+
+        string Message { get; }
     }
 }

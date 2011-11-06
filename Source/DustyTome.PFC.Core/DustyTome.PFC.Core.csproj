@@ -37,15 +37,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Error.cs" />
     <Compile Include="File.cs" />
     <Compile Include="FileRetriever.cs" />
+    <Compile Include="IError.cs" />
     <Compile Include="IFile.cs" />
     <Compile Include="IFileRetriever.cs" />
-    <Compile Include="IResult.cs" />
+    <Compile Include="IFileResults.cs" />
     <Compile Include="IRuleRetriever.cs" />
     <Compile Include="IRuleRunner.cs" />
     <Compile Include="IRule.cs" />
-    <Compile Include="Result.cs" />
+    <Compile Include="FileResults.cs" />
     <Compile Include="HardCodedRuleRetriever.cs" />
     <Compile Include="RuleRunner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

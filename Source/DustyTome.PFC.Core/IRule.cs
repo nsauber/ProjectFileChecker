@@ -6,6 +6,6 @@ namespace DustyTome.PFC.Core
 {
     public interface IRule
     {
-        IResult Run(IFile file);
+        IEnumerable<IError> Check(IFile file);
     }
 }

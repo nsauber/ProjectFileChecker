@@ -6,9 +6,9 @@ namespace DustyTome.PFC.Core
 {
     public class AlwaysSuccessfulRule : IRule
     {
-        public IResult Run(IFile file)
+        public IEnumerable<IError> Check(IFile file)
         {
-            return new Result(new List<string>());
+            return new List<IError>();
         }
     }
 }

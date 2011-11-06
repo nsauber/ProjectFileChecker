@@ -44,36 +44,31 @@ namespace DustyTome.PFC.Tests.Core
             var rule3 = _mocks.StrictMock<IRule>();
             var rules = new List<IRule> { rule1, rule2, rule3 };
 
-            var results = new IResult[6];
-            for (int i = 0; i < 6; i++)
-            {
-                results[i] = _mocks.Stub<IResult>();
-            }
-
+            var errors = new List<IError>();
             using (_mocks.Record())
             {
                 Expect.Call(_fileRetriever.GetFiles()).Return(files);
                 Expect.Call(_ruleRetriever.GetRules()).Return(rules);
-                Expect.Call(rule1.Run(file1)).Return(results[0]);
-                Expect.Call(rule1.Run(file2)).Return(results[1]);
-                Expect.Call(rule2.Run(file1)).Return(results[2]);
-                Expect.Call(rule2.Run(file2)).Return(results[3]);
-                Expect.Call(rule3.Run(file1)).Return(results[4]);
-                Expect.Call(rule3.Run(file2)).Return(results[5]);
+                Expect.Call(rule1.Check(file1)).Return(errors);
+                Expect.Call(rule1.Check(file2)).Return(errors);
+                Expect.Call(rule2.Check(file1)).Return(errors);
+                Expect.Call(rule2.Check(file2)).Return(errors);
+                Expect.Call(rule3.Check(file1)).Return(errors);
+                Expect.Call(rule3.Check(file2)).Return(errors);
             }
 
             // Act
-            IEnumerable<IResult> actualResults;
+            IEnumerable<IFileResults> results;
             using (_mocks.Playback())
             {
-                actualResults = _ruleRunner.Run();
+                results = _ruleRunner.Run();
             }
 
             // Assert
-            Assert.That(_helper.NumberOfItemsIn(actualResults), Is.EqualTo(6));
+            Assert.That(_helper.NumberOfItemsIn(results), Is.EqualTo(_helper.NumberOfItemsIn(files)));
             foreach (var result in results)
             {
-                Assert.That(actualResults, Contains.Item(result));
+                Assert.That(files, Contains.Item(result.File));
             }
         }
     }
