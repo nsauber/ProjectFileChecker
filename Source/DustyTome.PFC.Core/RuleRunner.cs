@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace DustyTome.PFC.Core
 {
@@ -24,15 +22,18 @@ namespace DustyTome.PFC.Core
 
             foreach (var file in files)
             {
-                var fileResults = new FileResults(file);
-
-                foreach (var rule in rules)
+                using (file)
                 {
-                    var errors = rule.Check(file);
-                    fileResults.Merge(errors);
-                }
+                    var fileResults = new FileResults(file);
 
-                results.Add(fileResults);
+                    foreach (var rule in rules)
+                    {
+                        var errors = rule.Check(file);
+                        fileResults.Merge(errors);
+                    }
+
+                    results.Add(fileResults);
+                }
             }
 
             return results;

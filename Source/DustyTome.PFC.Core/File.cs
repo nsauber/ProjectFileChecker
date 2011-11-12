@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.IO;
+﻿using System.IO;
 
 namespace DustyTome.PFC.Core
 {
     public class File : IFile
     {
+        private Stream _stream;
+
         public File(string filePath)
         {
+            _stream = null;
+
             FilePath = filePath;
         }
 
@@ -16,7 +17,20 @@ namespace DustyTome.PFC.Core
         
         public Stream GetStream()
         {
-            return new FileStream(FilePath, FileMode.Open);
+            if (_stream == null)
+            {
+                _stream = new FileStream(FilePath, FileMode.Open);
+            }
+
+            return _stream;
+        }
+
+        public void Dispose()
+        {
+            if (_stream != null)
+            {
+                _stream.Dispose();
+            }
         }
     }
 }
