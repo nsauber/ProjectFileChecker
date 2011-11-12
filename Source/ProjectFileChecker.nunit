@@ -3,5 +3,7 @@
   <Config name="Debug" binpathtype="Auto">
     <assembly path="DustyTome.PFC.Tests\bin\Debug\DustyTome.PFC.Tests.dll" />
   </Config>
-  <Config name="Release" binpathtype="Auto" />
+  <Config name="Release" binpathtype="Auto">
+    <assembly path="DustyTome.PFC.Tests\bin\Release\DustyTome.PFC.Tests.dll" />
+  </Config>
 </NUnitProject>
