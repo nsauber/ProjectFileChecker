@@ -53,6 +53,7 @@
     <Compile Include="Core\FileResultsTests.cs" />
     <Compile Include="Core\FileRetrieverTests.cs" />
     <Compile Include="Core\RuleRunnerTests.cs" />
+    <Compile Include="Core\UsingMsBuild4RuleTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -63,6 +64,19 @@
       <Project>{BE9A05E4-D547-4A4B-8609-4CDA41186CB8}</Project>
       <Name>DustyTome.PFC.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectFiles\ProjectFileWithoutToolsVersion.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectFiles\ProjectFileUsingMsBuild35.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectFiles\ProjectFileUsingMsBuild4.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
