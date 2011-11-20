@@ -10,7 +10,9 @@ namespace DustyTome.PFC.Core
         {
             var rules = new List<IRule>();
 
-            rules.Add(new AlwaysSuccessfulRule());
+            //rules.Add(new AlwaysSuccessfulRule());
+            //rules.Add(new AlwaysFailureRule());
+            rules.Add(new UsingMsBuild4Rule());
 
             return rules;
         }
