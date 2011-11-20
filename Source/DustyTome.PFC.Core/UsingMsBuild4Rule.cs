@@ -6,6 +6,11 @@ namespace DustyTome.PFC.Core
 {
     public class UsingMsBuild4Rule : IRule
     {
+        public string Identifier
+        {
+            get { return "TEMP003"; }
+        }
+
         public IEnumerable<IError> Check(IFile file)
         {
             var errors = new List<IError>();
