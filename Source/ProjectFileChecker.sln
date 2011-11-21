@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DustyTome.PFC.Tests", "Dust
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DustyTome.PFC.UI.Console", "DustyTome.PFC.UI.Console\DustyTome.PFC.UI.Console.csproj", "{B40E3FE0-5EA6-4F66-A27F-C8AC16EA8717}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DustyTome.PFC.Configuration", "DustyTome.PFC.Configuration\DustyTome.PFC.Configuration.csproj", "{F398C97C-2CE8-4069-BFF3-F97CACFC189B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{B40E3FE0-5EA6-4F66-A27F-C8AC16EA8717}.Release|Mixed Platforms.Build.0 = Release|x86
 		{B40E3FE0-5EA6-4F66-A27F-C8AC16EA8717}.Release|x86.ActiveCfg = Release|x86
 		{B40E3FE0-5EA6-4F66-A27F-C8AC16EA8717}.Release|x86.Build.0 = Release|x86
+		{F398C97C-2CE8-4069-BFF3-F97CACFC189B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F398C97C-2CE8-4069-BFF3-F97CACFC189B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F398C97C-2CE8-4069-BFF3-F97CACFC189B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F398C97C-2CE8-4069-BFF3-F97CACFC189B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F398C97C-2CE8-4069-BFF3-F97CACFC189B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F398C97C-2CE8-4069-BFF3-F97CACFC189B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F398C97C-2CE8-4069-BFF3-F97CACFC189B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F398C97C-2CE8-4069-BFF3-F97CACFC189B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F398C97C-2CE8-4069-BFF3-F97CACFC189B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F398C97C-2CE8-4069-BFF3-F97CACFC189B}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

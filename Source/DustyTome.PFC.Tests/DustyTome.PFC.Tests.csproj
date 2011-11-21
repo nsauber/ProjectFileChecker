@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\SerializerManualTestHarness.cs" />
     <Compile Include="Core\FileResultsTests.cs" />
     <Compile Include="Core\FileRetrieverTests.cs" />
     <Compile Include="Core\RuleRunnerTests.cs" />
@@ -60,6 +61,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DustyTome.PFC.Configuration\DustyTome.PFC.Configuration.csproj">
+      <Project>{F398C97C-2CE8-4069-BFF3-F97CACFC189B}</Project>
+      <Name>DustyTome.PFC.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DustyTome.PFC.Core\DustyTome.PFC.Core.csproj">
       <Project>{BE9A05E4-D547-4A4B-8609-4CDA41186CB8}</Project>
       <Name>DustyTome.PFC.Core</Name>
