@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using DustyTome.PFC.Core;
-using System.IO;
 
 namespace DustyTome.PFC.UI.Console
 {

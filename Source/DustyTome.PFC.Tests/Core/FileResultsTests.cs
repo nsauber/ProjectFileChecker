@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using DustyTome.PFC.Core;
 using NUnit.Framework;
 using Rhino.Mocks;
-using DustyTome.PFC.Core;
 
 namespace DustyTome.PFC.Tests.Core
 {

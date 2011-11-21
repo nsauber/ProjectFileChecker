@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DustyTome.PFC.Configuration;
 using NUnit.Framework;
-using DustyTome.PFC.Configuration;
 
 namespace DustyTome.PFC.Tests.Configuration
 {
